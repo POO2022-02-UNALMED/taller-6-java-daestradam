@@ -1,5 +1,7 @@
 package vehiculos;
 
+import java.util.Collections;
+
 public class Fabricante {
 	private String nombre;
 	private Pais pais;
@@ -24,8 +26,9 @@ public class Fabricante {
 	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
-	/*
-	public String fabricaMayorVentas() {
-		
-	}*/
+	
+	public static Fabricante fabricaMayorVentas() {
+		int max = Collections.max(Vehiculo.cantFabricantes);
+		return Vehiculo.fabricantes.get(Vehiculo.cantFabricantes.indexOf(max));
+	}
 }
